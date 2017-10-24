@@ -1,0 +1,23 @@
+{
+  "name": "skyrider",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "chromedriver": "^2.33.2",
+    "cookie-parser": "^1.4.3",
+    "debug": "^2.6.9",
+    "express": "^4.15.5",
+    "morgan": "^1.9.0",
+    "protractor": "^5.2.0",
+    "pug": "^2.0.0-beta11",
+    "selenium-webdriver": "^3.6.0",
+    "serve-favicon": "^2.4.5",
+    "webdriver": "^5.0.0-rc1",
+    "webdriverio": "^4.8.0",
+    "wechaty": "^0.11.3"
+  }
+}

@@ -1,0 +1,11 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    //angular stuff
+    script(src='../public/javascripts/libs/angular.min.js')
+    //skyRider stuff
+    script(src='../public/javascripts/app/graphController.js')
+  body(ng-app='skyRider')
+    block content
