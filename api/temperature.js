@@ -14,10 +14,21 @@ router.get('/getTemperature/:cityname', function(req, res, next) {
         .init()
         .url('https://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854')
         .getText('.day').then(function(elements){
-            
-            elements.forEach(function(element) {
-                console.log('Element: \n' + element + '\n\n');
+            var tempratureInfo = {};
+            tempratureInfo.header = elements[0];
+            tempratureInfo.tempratureDetailsList = [];
+            var tempratures = elements.slice(2, 7);
+            tempratures.forEach(function(temprature) {
+                var temprature = temprature.split('\n');
+                var tempratureDetails = {}
+                tempratureDetails.day = temprature[0];
+                tempratureDetails.date = temprature[1];
+                tempratureDetails.temprature = temprature[2].split(' /');
+                tempratureDetails.description = temprature[3];
+                tempratureInfo.tempratureDetailsList.push(tempratureDetails);
+                console.log(tempratureDetails);
             });
+            res.send(tempratureInfo);
         })
         .end();
 });
