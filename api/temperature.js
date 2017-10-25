@@ -12,9 +12,12 @@ router.get('/getTemperature/:cityname', function(req, res, next) {
     console.log(req.params.cityname);
     var browser = webdriverio.remote(options)
         .init()
-        .url('http://www.ynet.co.il')
-        .getTitle().then(function(title) {
-            res.send('Title was: ' + title);
+        .url('https://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854')
+        .getText('.day').then(function(elements){
+            
+            elements.forEach(function(element) {
+                console.log('Element: \n' + element + '\n\n');
+            });
         })
         .end();
 });
