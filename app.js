@@ -1,3 +1,4 @@
+'use strict';
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -9,6 +10,7 @@ var index = require('./routes/index');
 var temperature = require('./api/temperature');
 
 var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

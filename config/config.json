@@ -1,0 +1,6 @@
+{
+    "db":{
+        "address":"mongodb://localhost:27017/skyRider"
+    },
+    "thirdPartyUrl":"https://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854"
+}

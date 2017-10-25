@@ -12,4 +12,6 @@ html
     
   body(ng-app='skyRider')
     script(src='../javascripts/app/graphProvider.js')
+    button(type='button' onclick='getGraph("http://localhost:3000/api/temperature/getTemperature")') Get values online
+    button(type='button' onclick='getGraph("http://localhost:3000/api/temperature/getTemperatureByDB")') Get values from DB
     block content

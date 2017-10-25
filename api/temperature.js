@@ -1,6 +1,10 @@
+'use strict';
 var express = require('express');
 var router = express.Router();
 var webdriverio = require('webdriverio');
+var db = require('../libs/db');
+var config = require('../config/config.json')
+
 
 var options = {
     desiredCapabilities: {
@@ -8,11 +12,10 @@ var options = {
     }
 };
 
-router.get('/getTemperature/:cityname', function(req, res, next) {
-    console.log(req.params.cityname);
+router.get('/getTemperature/', function(req, res, next) {
     var browser = webdriverio.remote(options)
         .init()
-        .url('https://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854')
+        .url(config.thirdPartyUrl)
         .getText('.day').then(function(elements){
             var tempratureInfo = [];
             var tempratures = elements.slice(4, 9);
@@ -28,7 +31,10 @@ router.get('/getTemperature/:cityname', function(req, res, next) {
         .end();
 });
 
+router.get('/getTemperatureByDB/', function(req, res, next) {
+    db.readDocuments({}, 'temperature', function(data){
+        res.send(data[0].temperatureList);
+    });
+});
+
 module.exports = router;
-
-
-

@@ -7,10 +7,13 @@
   },
   "dependencies": {
     "body-parser": "^1.18.2",
+    "bson": "^1.0.4",
     "chromedriver": "^2.33.2",
     "cookie-parser": "^1.4.3",
     "debug": "^2.6.9",
     "express": "^4.15.5",
+    "mongodb": "^2.2.33",
+    "mongodb-promise": "0.0.4",
     "morgan": "^1.9.0",
     "protractor": "^5.2.0",
     "pug": "^2.0.0-beta11",
