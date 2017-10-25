@@ -4,8 +4,12 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     //angular stuff
-    script(src='../public/javascripts/libs/angular.min.js')
+    script(src='../javascripts/libs/angular.min.js')
+    //load the d3.js library  
+    script(src='http://d3js.org/d3.v3.min.js')  
     //skyRider stuff
-    script(src='../public/javascripts/app/graphController.js')
+    script(src='../javascripts/app/graphController.js')
+    
   body(ng-app='skyRider')
+    script(src='../javascripts/app/graphProvider.js')
     block content
