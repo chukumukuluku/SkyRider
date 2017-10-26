@@ -3,8 +3,13 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    //jquery stuff
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    //bootstrap stuff
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js') 
     //angular stuff
-    script(src='../javascripts/libs/angular.min.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js')
     //load the d3.js library  
     script(src='http://d3js.org/d3.v3.min.js')  
     //skyRider stuff
@@ -12,6 +17,14 @@ html
     
   body(ng-app='skyRider')
     script(src='../javascripts/app/graphProvider.js')
-    button(type='button' onclick='getGraph("http://localhost:3000/api/temperature/getTemperature")') Get values online
-    button(type='button' onclick='getGraph("http://localhost:3000/api/temperature/getTemperatureByDB")') Get values from DB
-    block content
+    nav.navbar.navbar-default( role="navigation" )
+      .navbar-header
+          a.navbar-brand(href="/") Sky Rider
+  
+      #navbar-inverse.collapse.navbar-collapse
+          ul.nav.navbar-nav
+              li.active: a( href="/") Home
+              li.active: a( href="/dbGraph") Graph from DB
+              li.active: a( href="/onlineGraph") Online graph 
+              li.dropdown
+    div(ng-view)

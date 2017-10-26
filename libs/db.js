@@ -12,8 +12,7 @@ var insertDocuments = function(jsonList, collection, cb){
                     return col.insert(jsonList)
                         .then(function(result) {
                             cb(result);
-                            console.log(result);
-                            db.close().then(console.log('success'));
+                            db.close();
                         })
                 })
         })
@@ -29,8 +28,7 @@ var readDocuments = function(jsonToFind, collection, cb){
                     return col.find(jsonToFind).toArray()
                         .then(function(items) {
                             cb(items);
-                            console.log(items);
-                            db.close().then(console.log('success'));
+                            db.close();
                             return items;
                         })
                 })

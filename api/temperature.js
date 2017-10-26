@@ -18,7 +18,7 @@ router.get('/getTemperature/', function(req, res, next) {
         .url(config.thirdPartyUrl)
         .getText('.day').then(function(elements){
             var tempratureInfo = [];
-            var tempratures = elements.slice(4, 9);
+            var tempratures = elements.slice(2, 7);
             tempratures.forEach(function(temprature) {
                 var temprature = temprature.split('\n');
                 var tempratureOfDay = {}
